@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         if true{
                   
                   let storyboard = UIStoryboard(name: "Content", bundle: nil)
-                  let vc = storyboard.instantiateViewController(withIdentifier: "Content") as UIViewController
+                  let vc = storyboard.instantiateViewController(withIdentifier: "grnavcontroller") as UIViewController
                   vc.modalPresentationStyle = .fullScreen // try without fullscreen
                   present(vc,animated: true,completion: nil)
               }

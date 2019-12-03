@@ -12,7 +12,15 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var accountList:[Account]=[]
+    
+    func StoreTestAccount(){
+        accountList=[
+            Account(email: "user1gmail.com1", password: "12345678"),
+            Account(email: "admin@apple.com", password: "root"),
+        ]
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
