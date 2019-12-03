@@ -45,12 +45,19 @@
                                 <rect key="frame" x="20" y="496" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="Loginbtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ab2-BL-LSQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="A9V-Xn-feL"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="8Gq-NK-3hy" id="QCi-zi-4df"/>
+                        <outlet property="txtPassword" destination="sOS-9h-ORL" id="cAh-4u-yBb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
