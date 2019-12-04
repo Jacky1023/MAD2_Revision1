@@ -14,16 +14,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var accountList:[Account]=[]
-    
-    func StoreTestAccount(){
-        accountList=[
-            Account(email: "user1gmail.com1", password: "12345678"),
-            Account(email: "admin@apple.com", password: "root"),
-        ]
+     
+    func StoreTestAccount(entity: String)->Bool
+    {
+//        accountList=[
+//            Account(email: "user1gmail.com1", password: "12345678"),
+//            Account(email: "admin@apple.com", password: "root"),
+//        ]
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName:"CDContact", in: context)!
+        
+        let account1 = NSManagedObject(entity: entity, insertInto: context)
+        account1.setValue("user1@gmail.com", forKey: "email")
+        account1.setValue("12345678", forKey: "password")
+        let account2 = NSManagedObject(entity: entity, insertInto: context)
+        account2.setValue("admin@apple.com", forKey: "email")
+        account2.setValue("root", forKey: "password")
+
+       do{
+           try context.save()
+       } catch let error as NSError {
+           print("Could not save. \(error), \(error.userInfo)")
+       }
+        return account1,account2
     }
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //StoreTestAccount()
         return true
     }
 
