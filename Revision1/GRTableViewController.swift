@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 class GRTableViewController : UITableViewController{
-    var accountList:[Account]=[]
+    var contactList:[Contact]=[]
    
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -25,22 +25,26 @@ class GRTableViewController : UITableViewController{
 
          self.tableView.reloadData()
      }
-     
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var txtName: UILabel!
+    @IBOutlet weak var txtTelephone: UILabel!
+    
+    //override number of section = 1
      override func numberOfSections(in tableView: UITableView) -> Int {
          return 1
      }
      
      override func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int)->Int{
-         return accountList.count
+         return contactList.count
      }
      
      override func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
          
-         let cell = self.tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath)
+         let cell = self.tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
          
-         let account = accountList[indexPath.row]
-        cell.textLabel!.text = "\(account.Email) "
-        cell.detailTextLabel!.text = "\(account.Password)"
+         let contact = contactList[indexPath.row]
+        cell.textLabel!.text = "\(contact.FirstName)\(contact.LastName)\(contact.Photo) "
+        cell.detailTextLabel!.text = "\(contact.Telephone)"
 
          
          return cell
@@ -49,10 +53,10 @@ class GRTableViewController : UITableViewController{
      /*Exercise 2*/
      //delete the row selected
       override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-         print(accountList.count)
+        print(contactList.count)
          print(indexPath.row)
          if editingStyle == UITableViewCell.EditingStyle.delete{
-            accountList.remove(at: indexPath.row)
+            contactList.remove(at: indexPath.row)
              tableView.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.middle)
 
         }

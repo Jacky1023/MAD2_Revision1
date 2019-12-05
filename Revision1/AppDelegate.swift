@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var contactList:[Contact]=[]
     
     func StoreTestAccount()
     {
@@ -35,6 +35,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        } catch let error as NSError {
            print("Could not save. \(error), \(error.userInfo)")
        }
+    }
+    
+    func CreateDummyContacts()
+    {
+       contactList = [
+        Contact(firstname: "Alan", lastname: "Hayan", photo: UIImage(named: "alanhayes")!, telephone: "88221122"),
+        Contact(firstname: "Jean", lastname: "Yip", photo: UIImage(named: "jeanyip")!, telephone: "55115522")
+        ]
     }
     
 
