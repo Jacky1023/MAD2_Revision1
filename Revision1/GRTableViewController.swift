@@ -11,8 +11,7 @@ import UIKit
 import CoreData
 
 class GRTableViewController : UITableViewController{
-    var contactList:[Contact]=[]
-   
+    var contacts:[Contact]=[]
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
@@ -25,9 +24,18 @@ class GRTableViewController : UITableViewController{
 
          self.tableView.reloadData()
      }
-    @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var txtName: UILabel!
-    @IBOutlet weak var txtTelephone: UILabel!
+
+    func createArray()->[Contact]{
+        var contactList:[Contact] = []
+        
+        let contact1 = Contact(firstname: "Alan", lastname: "hayes", photo: alanhayes, telephone: "88221122")
+        let contact2 = Contact(firstname: "Jean", lastname: "Yip", photo: jeanyip, telephone: "55115522")
+        
+        contactList.append(contact1)
+        contactList.append(contact2)
+        return contactList
+    }
+   
     
     //override number of section = 1
      override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,14 +43,14 @@ class GRTableViewController : UITableViewController{
      }
      
      override func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int)->Int{
-         return contactList.count
+         return contacts.count
      }
      
      override func tableView(_ tableView:UITableView, cellForRowAt indexPath: IndexPath)->UITableViewCell{
          
          let cell = self.tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
          
-         let contact = contactList[indexPath.row]
+         let contact = contacts[indexPath.row]
         cell.textLabel!.text = "\(contact.FirstName)\(contact.LastName)\(contact.Photo) "
         cell.detailTextLabel!.text = "\(contact.Telephone)"
 
