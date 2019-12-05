@@ -12,8 +12,7 @@ import CoreData
 
 class GRTableViewController : UITableViewController{
     var accountList:[Account]=[]
-    var accountController:AccountController = AccountController()
-
+   
     
     var appDelegate = UIApplication.shared.delegate as! AppDelegate
     override func viewDidLoad() {
@@ -23,8 +22,7 @@ class GRTableViewController : UITableViewController{
         
     }
     override func viewDidAppear(_ animated: Bool){
-         let accountController = AccountController()
-        accountList = accountController.RetrieveAllAccount();
+
          self.tableView.reloadData()
      }
      

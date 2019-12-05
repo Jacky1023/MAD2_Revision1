@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8740D060239793CB00EAE7F3 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8740D05F239793CB00EAE7F3 /* AccountController.swift */; };
 		87742F5C23962C0000AB62F8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87742F5B23962C0000AB62F8 /* Account.swift */; };
 		87742F5E23962D7F00AB62F8 /* GRTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87742F5D23962D7F00AB62F8 /* GRTableViewController.swift */; };
 		87865AAE2398BB1000DCC39A /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87865AAD2398BB1000DCC39A /* Contact.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8740D05F239793CB00EAE7F3 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		87742F5B23962C0000AB62F8 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		87742F5D23962D7F00AB62F8 /* GRTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GRTableViewController.swift; sourceTree = "<group>"; };
 		87865AAD2398BB1000DCC39A /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
@@ -76,7 +74,6 @@
 				87EC8F0B239615740010F653 /* Revision1.xcdatamodeld */,
 				87742F5B23962C0000AB62F8 /* Account.swift */,
 				87742F5D23962D7F00AB62F8 /* GRTableViewController.swift */,
-				8740D05F239793CB00EAE7F3 /* AccountController.swift */,
 				87865AAD2398BB1000DCC39A /* Contact.swift */,
 			);
 			path = Revision1;
@@ -153,7 +150,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8740D060239793CB00EAE7F3 /* AccountController.swift in Sources */,
 				87742F5C23962C0000AB62F8 /* Account.swift in Sources */,
 				87EC8F07239615740010F653 /* ViewController.swift in Sources */,
 				87EC8F03239615740010F653 /* AppDelegate.swift in Sources */,
