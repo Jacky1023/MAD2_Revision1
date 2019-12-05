@@ -16,30 +16,33 @@ class ViewController: UIViewController {
     
     @IBAction func Loginbtn(_ sender: Any) {
         
-        var accountList:[NSManagedObject]=[]
-        
+        var account:[NSManagedObject]=[]
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
+        appDelegate.StoreTestAccount()
+                   
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDAccount")
+//        fetchRequest.predicate = NSPredicate (format: "email == %@", Email)
         do{
-            accountList = try context.fetch(fetchRequest)
-            
-            for a in accountList{
+            account = try context.fetch(fetchRequest)
+                       
+            for a in account{
                 let email = a.value(forKey: "email")as? String
                 let pwd = a.value(forKey: "password") as? String
-                print("\(email),\(pwd)")
-            }
-        }catch let error as NSError{
-            print("Could not fetch.\(error),")
-        }
-            if true{
                 
-                let storyboard = UIStoryboard(name: "Content", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "grnavcontroller") as UIViewController
-                vc.modalPresentationStyle = .fullScreen // try without fullscreen
-                present(vc,animated: true,completion: nil)
+                if(txtEmail.text == email && txtPassword.text == pwd){
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "grnavcontroller")
+                    present(vc!,animated: true,completion: nil)
+                }
             }
+         }catch let error as NSError{
+            print("Could not get email and password.\(error),")
+        }
+  
+       
+                
+        
+            
          
     }
     

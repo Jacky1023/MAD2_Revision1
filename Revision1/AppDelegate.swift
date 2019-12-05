@@ -14,17 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var accountList:[Account]=[]
-     
-    func StoreTestAccount(entity: String)->Bool
+    
+    func StoreTestAccount()
     {
-//        accountList=[
-//            Account(email: "user1gmail.com1", password: "12345678"),
-//            Account(email: "admin@apple.com", password: "root"),
-//        ]
+
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName:"CDContact", in: context)!
+        let entity = NSEntityDescription.entity(forEntityName:"CDAccount", in: context)!
         
         let account1 = NSManagedObject(entity: entity, insertInto: context)
         account1.setValue("user1@gmail.com", forKey: "email")
@@ -38,7 +35,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        } catch let error as NSError {
            print("Could not save. \(error), \(error.userInfo)")
        }
-        return account1,account2
     }
     
 

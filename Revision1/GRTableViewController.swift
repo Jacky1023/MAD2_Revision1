@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class ShowAccountViewController : UITableViewController{
+class GRTableViewController : UITableViewController{
     var accountList:[Account]=[]
     var accountController:AccountController = AccountController()
 
